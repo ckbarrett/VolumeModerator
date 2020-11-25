@@ -1,3 +1,11 @@
+#####################################################
+# Created by: Christian Barrett                     #
+# Date: 11/24/2020                                  #
+# Project: Volume Moderator to make sure            #
+#          you're not being too loud                #
+#####################################################
+
+
 import sounddevice as sd
 from playsound import playsound
 import numpy as np
