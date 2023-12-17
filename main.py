@@ -8,6 +8,7 @@ from threading import Thread
 listening = False
 listener_thread = None
 counter = 0
+threshold = 40 # decibles
 
 # Function to play a sound
 def play_sound():
@@ -19,8 +20,6 @@ def play_sound():
 def audio_callback(indata, frames, time, status):
     global counter
     volume_norm = np.linalg.norm(indata) * 10  # Calculate the volume level
-
-    threshold = 40 # decibles
 
     if volume_norm > threshold :  # Check if volume exceeds threshold 
         play_sound()  # Play the sound
@@ -41,7 +40,7 @@ def start_listener():
         listener_thread.start()
         start_button.config(state=tk.DISABLED)
         stop_button.config(state=tk.NORMAL)
-        print(text=f"Listener started. Listening for sound levels above {counter} decibels.")
+        print("Listener started. Listening for sound levels above " + str(threshold) + " decibels.")
 
 # Function to stop the microphone listener
 def stop_listener():
