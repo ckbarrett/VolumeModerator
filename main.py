@@ -63,15 +63,16 @@ def listen_microphone():
 # Create GUI
 root = tk.Tk()
 root.title("Microphone Listener")
+root.geometry("300x200")
 
 start_button = tk.Button(root, text="Start Listener", command=start_listener)
-start_button.pack(pady=10)
+start_button.pack(pady=(50,0), padx=50)
 
 stop_button = tk.Button(root, text="Stop Listener", command=stop_listener, state=tk.DISABLED)
-stop_button.pack(pady=5)
+stop_button.pack(pady=10, padx=50)
 
 counter_label = tk.Label(root, text="Detected Noises: 0")
-counter_label.pack(pady=5)
+counter_label.pack(pady=10, padx=50)
 
 # Run the GUI
 root.mainloop()
