@@ -41,7 +41,7 @@ def start_listener():
         listener_thread.start()
         start_button.config(state=tk.DISABLED)
         stop_button.config(state=tk.NORMAL)
-        print("Listener started. Listening for sound levels above 10 decibels.")
+        print(text=f"Listener started. Listening for sound levels above {counter} decibels.")
 
 # Function to stop the microphone listener
 def stop_listener():
